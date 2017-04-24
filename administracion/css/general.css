@@ -1,0 +1,109 @@
+﻿body{
+	/*background-color: #EEEEEE;*/
+	background-image: url(/proyecto_administracion/img/fondo-verde-200548.jpg);
+	background-position: left top;
+	background-size: auto;
+	background-repeat: repeat-y;
+	color: #fff;
+	font-family: arial;
+}
+#cabecera{
+	width: 100%;
+	margin:auto;
+	height: 100px;
+	border:0px solid;
+	z-index: 999;
+	position: relative;
+	min-width: 1450px;
+}
+.cuerpo{
+	width: 90%;
+	max-width: 1800px;
+	min-width: 1330px;
+	margin: auto;
+}
+.boton{
+	cursor: pointer;
+}
+.tblFormularios td{
+	padding: 5px;
+}
+.btnMas{
+	border:0px solid;
+	width: 19px;
+	height: 19px;
+	background-image: url(../img/4signos.png);
+	background-color: transparent;
+	background-size: 220%;
+	background-position: left bottom;
+}
+.btnMenos, .btnMenosSeg, .btnMenosRS, .btnMenosCont{
+	border:0px solid;
+	width: 19px;
+	height: 19px;
+	background-image: url(../img/4signos.png);
+	background-color: transparent;
+	background-size: 220%;
+	background-position: right bottom;
+}
+.btnAcepSeg{
+	border:0px solid;
+	width: 19px;
+	height: 19px;
+	background-image: url(../img/4signos.png);
+	background-color: transparent;
+	background-size: 220%;
+	background-position: left top;
+}
+.btnCancelSeg{
+	border:0px solid;
+	width: 19px;
+	height: 19px;
+	background-image: url(../img/4signos.png);
+	background-color: transparent;
+	background-size: 220%;
+	background-position: right top;
+}
+.fondoEmergente{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	background-color: rgba(0,0,0,0.5);
+	visibility: hidden;
+}
+#guardaProyecto, #guardaColabolador, #guardaCliente{
+	border:3px solid #3C63B3;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3C63B3), color-stop(1, #4D80E6) );background:-moz-linear-gradient( center top, #3C63B3 5%, #4D80E6 100% );
+	border-radius: 8px;
+	width: 110px;
+	height: 40px;
+	color:#fff;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+.btnEditar, .btnEditarRS{
+	width: 23px;
+	height: 23px;
+	background-image: url(../img/lapiz.png);
+	background-color: transparent;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+/*.recordatorios{
+	border:1px solid black;
+	width: 250px;
+	min-height: 500px;
+	position: relative;
+	float: right;
+	background-color: #FCFBEB;
+	color:#000;
+	font-size: 11px;
+}
+.recordatorios b{
+	font-size: 12px;
+	overflow:scroll;
+}*/
