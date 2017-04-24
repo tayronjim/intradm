@@ -1,7 +1,13 @@
+<?php
+	session_start(); 
+	if (! isset($_SESSION['login'])) {
+		header('Location: ../../acceso/login.php');
+	}
+	else{ ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include_once("librerias_base.htm"); ?>
+	<?php include_once("../librerias_base.htm"); ?>
 	<?php $dirActual = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>
 	<?php //include_once("sesion\check_sesion.php"); ?>
 
@@ -137,7 +143,7 @@
 					
 			</table>
 		</div> -->
-		<?php include_once("recordatorios/recordatorios_home.php"); ?>
+		<?php include_once("../recordatorios/recordatorios_home.php"); ?>
 	</div>
 	<!-- <div class="recordatorios" style="position: relative;"> 
 		
@@ -163,3 +169,6 @@
 
 </body>
 </html>
+<?php
+	}  
+?>

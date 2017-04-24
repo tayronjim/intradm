@@ -1,6 +1,3 @@
-<?php session_start(); if (! isset($_SESSION['login'])) {
-	header('Location: /');
-}else{print_r($_SESSION['login']); unset($_SESSION['login']);}  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +28,7 @@
 
 		<nav>
 			<ul class="nav">
-				<li><a title="Administracion" href="../proyecto_administracion/" target="_BLANK"><i class="fa fa-pie-chart fa-4x"></i></a></li>
+				<li><a title="Administracion" href="../administracion/" target="_BLANK"><i class="fa fa-pie-chart fa-4x"></i></a></li>
 				<li><a title="Area de Links" href="../links/index.php" target="_BLANK"><i class="fa fa-link fa-4x"></i></a></li>
 				<li><a title="Buzon de Sugerencias" href="../buzon/index.php" target="_BLANK"><i class="fa fa-paper-plane-o fa-4x"></i></a></li>
 				<li><a title="Sistema de Tickets" href="../tickets/index.php" target="_BLANK"><i class="fa fa-ticket fa-4x"></i></a></li>
@@ -39,9 +36,9 @@
 		</nav>
 		<nav>
 			<ul class="nav">
-				<li><a title="" href="#" target="_BLANK"><i class="fa fa-graduation-cap fa-4x"></i></a></li>
+				<li><a title="Base de Conocimientos" href="#" target="_BLANK"><i class="fa fa-graduation-cap fa-4x"></i></a></li>
 				<li><a title="Temas de Ayuda" href="#" target="_BLANK"><i class="fa fa-question fa-4x"></i></a></li>
-				
+				<li><a title="Activos" href="../activos/" target="_BLANK"><i class="fa fa-laptop fa-4x"></i></a></li>
 			</ul>
 		</nav>
 

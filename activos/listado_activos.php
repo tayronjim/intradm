@@ -1,3 +1,11 @@
+<?php
+	session_start(); 
+	if (! isset($_SESSION['login'])) {
+		header('Location: ../acceso/login.php');
+	}
+	else{ ?>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -78,7 +86,9 @@
 		</table>
 	</body>
 </html>
-
+<?php
+	}  
+?>
 <?php
 	function carga_listado_tipo(){
 		$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");

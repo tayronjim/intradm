@@ -1,21 +1,11 @@
-<html lang="en">
-  <head>
-  <!-- ID de Cliente: 355653812398-7ti3u20mkn5uh6sofeudut60ig0gvsj3  -->
-  <!-- Key Secreto: umJRyPZvFJMa6y6ezCsJjwKv  -->
-    <meta name="google-signin-scope" content="profile email">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Intranet Diaz Morones</title>
+  <meta charset="utf-8">
+   <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="355653812398-7ti3u20mkn5uh6sofeudut60ig0gvsj3.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-     
-      });
-    </script>
-  </head>
-  <body>
-   
-    <div id="my-signin2" class="g-signin2" ></div><br>
-   
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
@@ -27,47 +17,76 @@
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
 
-
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
       };
-     
-
-     function onSuccess(googleUser) {
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    }
-
-
-     function onFailure(error) {
-      console.log(error);
-    }
-
-
-    function renderButton() {
-      gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 540,
-        'height': 50,
-        'longtitle': false,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
-      });
-    }
-
+ 
     </script>
-    <a href="#" onclick="signOut();">Sign out</a>
-    <script>
-      function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-        console.log('User signed out.');
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#txtUsuario").keyup(function(e){
+          checkKey(e); 
+        });
+
+        $("#txtClave").keyup(function(e){
+          checkKey(e); 
+        });
+      
+      });
+      function login(){
+        $usuario = $("#txtUsuario").val();
+        $clave = $("#txtClave").val();
+        
+        $.post("server.php",{"usuario":$usuario, "clave":$clave},function(resp){
+          if (resp == 1) { window.location="menu.php"; }
+          console.log(resp);
         });
       }
+      function checkKey(e){
+        if (e.which == 13) {
+            login();
+          }  
+
+      }
+
     </script>
 
+    <link rel="stylesheet" href="css/style.css">
+    <style type="text/css">
+      .frmLogin{
+        position: relative;
+        width: 250px;
+        height: 40px;
+        margin: auto;
+        font-weight: bold;
+      }
+      input[type='text'],input[type='password']{
+        width: 100%;
+        height: 25px;
+      }
+      #bodybg{
+        width: 100%;
+        height: 100%;
+      }
+      #btnLogin{
+        width: 100%;
+        height: 36px;
+        background-color: #009bdc;
+        margin-bottom: 10px;
+      }
+    </style>
 
-    
-  </body>
+  
+</head>
+<body>
+<div id="bodybg">
+  <div style="width: 180px; margin:auto;"><img style="width: 180px;" src="http://www.diazmorones.com/imagenes/logo nuevo vetical.png" id="logo"></div>
+  <div class="frmLogin">Usuario:<br><input type="text" name="txtUsuario" id="txtUsuario"></div><br>
+  <div class="frmLogin">Contraseña:<br><input type="password" name="txtClave" id="txtClave"></div><br>
+   <div class="frmLogin"><input type="submit" value="Acceso" name="btnAceso" id="btnLogin" onclick="login()"><div id="my-signin2" class="g-signin2" data-onsuccess="onSignIn" style="width: 250px;"></div></div>
+</div>
+  
+</body>
 </html>

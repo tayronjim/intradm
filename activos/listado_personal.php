@@ -1,3 +1,11 @@
+<?php
+	session_start(); 
+	if (! isset($_SESSION['login'])) {
+		header('Location: ../acceso/login.php');
+	}
+	else{ ?>
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -44,3 +52,6 @@
 		</table>
 	</body>
 </html>
+<?php
+	}  
+?>
